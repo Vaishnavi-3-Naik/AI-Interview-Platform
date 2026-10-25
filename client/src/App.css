@@ -1,0 +1,305 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f5f7fb;
+  color: #1f2937;
+}
+
+.dashboard {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Sidebar */
+
+.sidebar {
+  width: 240px;
+  background: #111827;
+  color: white;
+  padding: 25px 18px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.logo {
+  font-size: 21px;
+  font-weight: bold;
+  margin-bottom: 35px;
+}
+
+.sidebar nav {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.sidebar button {
+  border: none;
+  background: transparent;
+  color: #d1d5db;
+  padding: 13px;
+  text-align: left;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.sidebar button:hover {
+  background: #1f2937;
+  color: white;
+}
+
+.sidebar .active {
+  background: #2563eb;
+  color: white;
+}
+
+/* Main */
+
+.main-content {
+  margin-left: 240px;
+  width: calc(100% - 240px);
+  padding: 30px;
+}
+
+/* Header */
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.topbar h1 {
+  font-size: 28px;
+}
+
+.user-info {
+  background: white;
+  padding: 10px 16px;
+  border-radius: 10px;
+}
+
+/* Interview Card */
+
+.interview-card {
+  background: linear-gradient(135deg, #2563eb, #7c3aed);
+  color: white;
+  padding: 30px;
+  border-radius: 16px;
+  margin-bottom: 30px;
+}
+
+.interview-card h2 {
+  margin-bottom: 10px;
+}
+
+.interview-card p {
+  margin-bottom: 20px;
+  opacity: 0.9;
+}
+
+.start-button {
+  border: none;
+  padding: 12px 22px;
+  border-radius: 8px;
+  background: white;
+  color: #2563eb;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Statistics */
+
+.section-title {
+  margin-bottom: 15px;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  margin-bottom: 35px;
+}
+
+.stat-card {
+  background: white;
+  padding: 22px;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.stat-card h3 {
+  font-size: 28px;
+  margin-bottom: 8px;
+}
+
+.stat-card p {
+  color: #6b7280;
+  font-size: 14px;
+}
+
+/* Recent Interviews */
+
+.interviews {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.interview-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px 5px;
+  border-bottom: 1px solid #eee;
+}
+
+.interview-row:last-child {
+  border-bottom: none;
+}
+
+.score {
+  font-weight: bold;
+  color: #16a34a;
+}
+
+/* Responsive */
+
+@media (max-width: 900px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .sidebar {
+    width: 200px;
+  }
+
+  .main-content {
+    margin-left: 200px;
+    width: calc(100% - 200px);
+  }
+}
+
+@media (max-width: 600px) {
+  .sidebar {
+    display: none;
+  }
+
+  .main-content {
+    margin-left: 0;
+    width: 100%;
+    padding: 20px;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* Loading */
+
+.loading-screen {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* Sidebar bottom */
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-bottom {
+  margin-top: auto;
+}
+
+
+/* Quick Actions */
+
+.quick-actions {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  margin-bottom: 35px;
+}
+
+.action-card {
+  border: none;
+  background: white;
+  border-radius: 12px;
+  padding: 22px;
+  cursor: pointer;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  gap: 8px;
+
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+
+  transition: transform 0.2s ease,
+              box-shadow 0.2s ease;
+}
+
+.action-card:hover {
+  transform: translateY(-4px);
+
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.action-icon {
+  font-size: 30px;
+}
+
+.action-card span:not(.action-icon) {
+  font-size: 16px;
+  font-weight: bold;
+  color: #111827;
+}
+
+.action-card small {
+  color: #6b7280;
+}
+
+
+/* Recent interview description */
+
+.interview-row p {
+  margin-top: 5px;
+  font-size: 13px;
+  color: #6b7280;
+}
+
+
+/* Responsive Quick Actions */
+
+@media (max-width: 1100px) {
+
+  .quick-actions {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+
+
+@media (max-width: 600px) {
+
+  .quick-actions {
+    grid-template-columns: 1fr;
+  }
+
+}
